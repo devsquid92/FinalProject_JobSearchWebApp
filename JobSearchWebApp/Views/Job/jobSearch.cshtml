@@ -1,0 +1,85 @@
+﻿@model IEnumerable<JobSearchWebApp.Models.Job>
+
+@{
+    ViewBag.Title = "jobSearch";
+}
+
+<h2>Search results!</h2>
+
+
+<h3>Search here!</h3>
+@using (Html.BeginForm("jobSearch", "Job", FormMethod.Get))
+{
+    <div>(Search by Job Title)</div>
+
+    <br />
+    <p>@Html.Label("jobtitle", "Job Title"):</p> @Html.TextBox("jobtitle", null, new { @class = "form-control" })
+    <br />
+    <input type="submit" value=" Search " class="btn btn-default" />
+
+
+}
+<br />
+<br />
+
+<p>
+    @Html.ActionLink("Add Job", "AddJob")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobDesc)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobDesc)
+            </td>
+            <td>
+                @Html.ActionLink("Save Job", "SavedJobs", new { id = item.JobsId })
+
+            </td>
+        </tr>
+    }
+
+</table>

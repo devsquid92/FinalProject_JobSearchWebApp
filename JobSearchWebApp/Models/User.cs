@@ -13,6 +13,7 @@ namespace JobSearchWebApp.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
+
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

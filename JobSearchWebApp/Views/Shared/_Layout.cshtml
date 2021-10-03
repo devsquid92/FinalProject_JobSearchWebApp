@@ -21,7 +21,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Jobs", "Jobs", "Home")</li>
+                    <li>@Html.ActionLink("Jobs", "Index", "Job")</li>
                     @if (Session["UserId"] != null)
                     {
 
@@ -47,5 +47,6 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
 </body>
 </html>

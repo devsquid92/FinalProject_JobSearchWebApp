@@ -11,7 +11,8 @@ namespace JobSearchWebApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Job
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,10 +22,13 @@ namespace JobSearchWebApp.Models
         }
     
         public int JobsId { get; set; }
+        public string Title { get; set; }
         public string ComName { get; set; }
         public string Email { get; set; }
         public int Phone { get; set; }
         public string Address { get; set; }
+
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public System.DateTime Date { get; set; }
         public string JobDesc { get; set; }
     

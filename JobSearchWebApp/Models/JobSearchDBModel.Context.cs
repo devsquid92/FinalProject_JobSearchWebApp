@@ -12,11 +12,28 @@ namespace JobSearchWebApp.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
-    public partial class JobSearchDBEntities : DbContext
+    using System.Linq;
+    using System.Linq.Expressions;
+
+
+    public static class CollectionExtensions
     {
-        public JobSearchDBEntities()
-            : base("name=JobSearchDBEntities")
+        public static IQueryable<TSource> WhereIf<TSource>(
+            this IQueryable<TSource> source,
+            bool condition,
+            Expression<Func<TSource, bool>> predicate)
+        {
+            if (condition)
+                return source.Where(predicate);
+            else
+                return source;
+        }
+    }
+
+    public partial class JobSearchDBEntities1 : DbContext
+    {
+        public JobSearchDBEntities1()
+            : base("name=JobSearchDBEntities1")
         {
         }
     

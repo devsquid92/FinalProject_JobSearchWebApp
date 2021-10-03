@@ -25,7 +25,7 @@ namespace JobSearchWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                using (JobSearchDBEntities db = new JobSearchDBEntities())
+                using (JobSearchDBEntities1 db = new JobSearchDBEntities1())
                 {
                     db.Users.Add(user);
                     db.SaveChanges();
@@ -45,7 +45,7 @@ namespace JobSearchWebApp.Controllers
         [HttpPost]
         public ActionResult Login(User user)
         {
-            using (JobSearchDBEntities db = new JobSearchDBEntities())
+            using (JobSearchDBEntities1 db = new JobSearchDBEntities1())
             {
                 var usr = db.Users.Single(u => u.Email == user.Email && u.Password == user.Password);
 
