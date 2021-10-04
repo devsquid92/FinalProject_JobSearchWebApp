@@ -13,8 +13,8 @@
 
 
 #Database\
-#Download App_Data.rar and extract the file.
-#Copy the App_Data folder(inside extracted folder).
-#Go to source folder JobSearchWebApp
-#Paste the App_Data folder where the database file is saved.
+#Download App_Data.rar and extract the file.\
+#Copy the App_Data folder(inside extracted folder).\
+#Go to source folder JobSearchWebApp\
+#Paste the App_Data folder where the database file is saved.\
 #Run code through visual studio.
