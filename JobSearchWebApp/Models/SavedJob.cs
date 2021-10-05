@@ -11,13 +11,17 @@ namespace JobSearchWebApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class SavedJob
     {
         public int SJobId { get; set; }
+
+        [Display(Name = "Job ID")]
         public int JobsId { get; set; }
         public int UserId { get; set; }
     
+
         public virtual Job Job { get; set; }
         public virtual User User { get; set; }
     }

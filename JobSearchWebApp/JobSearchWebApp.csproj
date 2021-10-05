@@ -258,11 +258,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\LoggedIn.cshtml" />
     <Content Include="Views\Home\Jobs.cshtml" />
     <Content Include="Views\Job\AddJob.cshtml" />
     <Content Include="Views\Job\Index.cshtml" />
     <Content Include="Views\Job\jobSearch.cshtml" />
+    <Content Include="Views\Account\LoggedIn.cshtml" />
+    <Content Include="Views\Account\Details.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

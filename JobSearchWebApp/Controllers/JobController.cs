@@ -55,6 +55,35 @@ namespace JobSearchWebApp.Controllers
         }
 
 
+        public ActionResult SaveJob(int jobId)
+        {
+
+            if (Session["UserId"] != null)
+            {
+
+                var userId = Convert.ToInt32(Session["UserId"]);
+
+                JobSearchDBEntities1 db = new JobSearchDBEntities1();
+
+                SavedJob savejob = new SavedJob();
+
+                savejob.SJobId = jobId;
+                savejob.UserId = userId;
+
+                db.SavedJobs.Add(savejob);
+                db.SaveChanges();
+                
+                return RedirectToAction("Index", "Job");
+            }
+
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+        }
+
+
 
 
     }

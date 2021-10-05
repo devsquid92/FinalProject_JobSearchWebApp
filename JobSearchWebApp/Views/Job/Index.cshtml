@@ -76,9 +76,11 @@
                 @Html.DisplayFor(modelItem => item.JobDesc)
             </td>
             <td>
-                @Html.ActionLink("Save Job", "SavedJob", new { id = item.JobsId })
+                @Html.ActionLink("Save Job", "SaveJob", "Job", new { jobId = item.JobsId })
             </td>
         </tr>
+
+
     }
 
 </table>
@@ -87,3 +89,4 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+

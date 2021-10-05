@@ -1,8 +1,40 @@
-﻿@{
+﻿@model IEnumerable<JobSearchWebApp.Models.SavedJob>
+
+@{
     ViewBag.Title = "LoggedIn";
 }
 
 @if (Session["UserId"] != null)
 {
-    <h4> Hello @Session["FName"].ToString()</h4>
+    <h3> Hello @Session["FName"].ToString()</h3>
 }
+
+<h5>Saved Jobs</h5>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.JobsId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Job.Title)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobsId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Job.Title)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.Job.JobsId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SJobId })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -25,6 +25,7 @@
                     @if (Session["UserId"] != null)
                     {
 
+                        <li>@Html.ActionLink("Profile", "LoggedIn", "Account")</li>
                         <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
                     }
                     else

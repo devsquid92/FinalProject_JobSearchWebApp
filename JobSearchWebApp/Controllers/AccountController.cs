@@ -71,7 +71,14 @@ namespace JobSearchWebApp.Controllers
         {
             if (Session["UserId"] != null)
             {
-                return View();
+
+                JobSearchDBEntities1 db = new JobSearchDBEntities1();
+                
+                    var userId = Convert.ToInt32(Session["UserId"]);
+                    var dets = db.SavedJobs.Where(i => i.UserId == userId);
+
+                    return View(dets.ToList());
+                
             }
 
             else
@@ -79,6 +86,16 @@ namespace JobSearchWebApp.Controllers
                 return RedirectToAction("Login");
             }
         }
+
+
+
+        public ActionResult Details()
+        {
+            
+
+            return View();
+        }
+
 
         public ActionResult Logout()
         {

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<JobSearchWebApp.Models.SavedJob>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Job</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.Title)
+        </dt>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.ComName)
+        </dt>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.Email)
+        </dt>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.Phone)
+        </dt>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.Address)
+        </dt>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.Date)
+        </dt>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.JobDesc)
+        </dt>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to Profile", "LoggedIn")
+</p>
