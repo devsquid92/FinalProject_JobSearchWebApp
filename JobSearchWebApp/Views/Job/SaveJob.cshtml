@@ -1,0 +1,17 @@
+﻿@model JobSearchWebApp.Models.SavedJob
+
+@{
+    ViewBag.Title = "SaveJob";
+}
+
+<h2>SaveJob</h2>
+
+@if (ViewBag.Message != null)
+{
+    <div class="form-group">
+        <div class="col-md-10">@ViewBag.Message</div>
+    </div>}
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

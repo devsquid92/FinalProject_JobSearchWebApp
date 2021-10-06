@@ -264,6 +264,7 @@
     <Content Include="Views\Job\jobSearch.cshtml" />
     <Content Include="Views\Account\LoggedIn.cshtml" />
     <Content Include="Views\Account\Details.cshtml" />
+    <Content Include="Views\Job\SaveJob.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

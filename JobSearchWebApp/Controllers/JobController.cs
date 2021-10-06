@@ -60,6 +60,7 @@ namespace JobSearchWebApp.Controllers
 
             if (Session["UserId"] != null)
             {
+                var listJobId = jobId;
 
                 var userId = Convert.ToInt32(Session["UserId"]);
 
@@ -67,13 +68,16 @@ namespace JobSearchWebApp.Controllers
 
                 SavedJob savejob = new SavedJob();
 
-                savejob.SJobId = jobId;
+                savejob.JobsId = listJobId;
                 savejob.UserId = userId;
 
                 db.SavedJobs.Add(savejob);
                 db.SaveChanges();
-                
-                return RedirectToAction("Index", "Job");
+
+
+                ViewBag.Message = "Job Id: " + savejob.JobsId + " is successfuly saved to your profile.";
+
+                return View();
             }
 
             else

@@ -44,6 +44,7 @@ namespace JobSearchWebApp.Models
         public Nullable<int> Phone { get; set; }
 
         [Display(Name = "Date of birth:")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public Nullable<System.DateTime> DOB { get; set; }
 
         [Display(Name = "Gender:")]
