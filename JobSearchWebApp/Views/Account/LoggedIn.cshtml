@@ -1,4 +1,50 @@
-﻿@model IEnumerable<JobSearchWebApp.Models.SavedJob>
+﻿@*@model IEnumerable<JobSearchWebApp.Models.SavedJob>
+
+    @{
+        ViewBag.Title = "LoggedIn";
+    }
+
+    @if (Session["UserId"] != null)
+    {
+        <h3> Hello @Session["FName"].ToString()</h3>
+    }
+
+
+
+    <h5>Details</h5>
+
+
+    <h5>Saved Jobs</h5>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.JobsId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Job.Title)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobsId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Job.Title)
+        </td>
+        <td>
+        <td>
+            <a href="@Url.Action("del", "Account",new { sjobId = item.SJobId})">Delete</a>
+        </td>
+    </tr>
+        }
+
+    </table>*@
+
+@model JobSearchWebApp.Models.ProfileModel
 
 @{
     ViewBag.Title = "LoggedIn";
@@ -9,19 +55,39 @@
     <h3> Hello @Session["FName"].ToString()</h3>
 }
 
+
+
+<h5>Details</h5>
+
+
+    @foreach (var item in Model.userdetails)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.FName) <br />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LName) <br />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email) <br />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Phone) <br />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DOB) <br />
+    </td>
+    <td>
+        <a href="@Url.Action("Edit", "Account",new { id = item.UserId})">Edit</a>
+    </td>
+</tr>
+    }
+
 <h5>Saved Jobs</h5>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.JobsId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Job.Title)
-        </th>
-        <th></th>
-    </tr>
 
-    @foreach (var item in Model)
+    @foreach (var item in Model.savedjob)
     {
         <tr>
             <td>
@@ -31,10 +97,15 @@
                 @Html.DisplayFor(modelItem => item.Job.Title)
             </td>
             <td>
-                @Html.ActionLink("Details", "Details", new { id = item.Job.JobsId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.SJobId })
+            <td>
+                <a href="@Url.Action("del", "Account",new { sjobId = item.SJobId})">Delete</a>
             </td>
         </tr>
     }
 
 </table>
+
+
+
+
+

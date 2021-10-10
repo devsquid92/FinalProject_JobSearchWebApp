@@ -150,6 +150,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>JobSearchDBModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProfileModel.cs" />
     <Compile Include="Models\SavedJob.cs">
       <DependentUpon>JobSearchDBModel.tt</DependentUpon>
     </Compile>
@@ -265,6 +266,8 @@
     <Content Include="Views\Account\LoggedIn.cshtml" />
     <Content Include="Views\Account\Details.cshtml" />
     <Content Include="Views\Job\SaveJob.cshtml" />
+    <Content Include="Views\Account\del.cshtml" />
+    <Content Include="Views\Account\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

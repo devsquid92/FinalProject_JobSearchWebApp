@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "del";
+}
+
+<h2>Delete</h2>
+
+@if (ViewBag.Message != null)
+{
+    <div class="form-group">
+        <div class="col-md-10">@ViewBag.Message</div>
+    </div>}
+
+<p>
+    @Html.ActionLink("Back to profile", "LoggedIn")
+</p>
+
