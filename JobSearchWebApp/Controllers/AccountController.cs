@@ -47,22 +47,24 @@ namespace JobSearchWebApp.Controllers
         {
             using (JobSearchDBEntities1 db = new JobSearchDBEntities1())
             {
-                var usr = db.Users.Single(u => u.Email == user.Email && u.Password == user.Password);
-
-                if (usr != null)
+                try
                 {
-                    Session["UserID"] = usr.UserId.ToString();
-                    Session["Email"] = usr.Email.ToString();
-                    Session["FName"] = usr.FName.ToString();
+                    var usr = db.Users.Single(u => u.Email == user.Email && u.Password == user.Password);
 
-                    return RedirectToAction("LoggedIn");
+                    if (usr != null)
+                    {
+                        Session["UserID"] = usr.UserId.ToString();
+                        Session["Email"] = usr.Email.ToString();
+                        Session["FName"] = usr.FName.ToString();
+
+                        return RedirectToAction("LoggedIn");
+                    }
+                }
+                catch
+                {
+                    ModelState.AddModelError("invalid", "Invalid Email or Password.");
                 }
 
-                else
-                {
-                    ModelState.AddModelError("", "Email or Password is wrong.");
-
-                }
             }
             return View();
         }
@@ -162,9 +164,11 @@ namespace JobSearchWebApp.Controllers
                 edit.Email = user.Email;
                 edit.Phone = user.Phone;
                 edit.DOB = user.DOB;
-                edit.Password = user.Password;
+                //edit.Password = user.Password;
                 edit.ConfirmPassword = user.ConfirmPassword;
                 db.SaveChanges();
+
+                Session["FName"] = edit.FName.ToString();
 
 
                 return RedirectToAction("LoggedIn");

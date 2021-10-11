@@ -52,39 +52,56 @@
 
 @if (Session["UserId"] != null)
 {
-    <h3> Hello @Session["FName"].ToString()</h3>
+    <h2> Hello @Session["FName"].ToString()</h2>
 }
 
 
 
-<h5>Details</h5>
+<h4>Details</h4>
+
 
 
     @foreach (var item in Model.userdetails)
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.FName) <br />
-    </td>
-    <td>
+
+        <b>
+            @Html.DisplayNameFor(model => item.FName)
+        </b>
+        @Html.DisplayFor(modelItem => item.FName)<br />
+
+
+        <b>
+            @Html.DisplayNameFor(model => item.LName)
+        </b>
         @Html.DisplayFor(modelItem => item.LName) <br />
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Email) <br />
-    </td>
-    <td>
+
+
+        <b>
+            @Html.DisplayNameFor(model => item.Email)
+        </b>
+        @Html.DisplayFor(modelItem => item.Email)<br />
+
+
+
+        <b>
+            @Html.DisplayNameFor(model => item.Phone)
+        </b>
         @Html.DisplayFor(modelItem => item.Phone) <br />
-    </td>
-    <td>
+
+
+
+        <b>
+            @Html.DisplayNameFor(model => item.DOB)
+        </b>
         @Html.DisplayFor(modelItem => item.DOB) <br />
-    </td>
-    <td>
+
+
+
         <a href="@Url.Action("Edit", "Account",new { id = item.UserId})">Edit</a>
-    </td>
-</tr>
     }
 
-<h5>Saved Jobs</h5>
+
+<h4>Saved Jobs</h4>
 <table class="table">
 
     @foreach (var item in Model.savedjob)
