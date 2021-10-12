@@ -24,7 +24,7 @@ namespace JobSearchWebApp.Controllers
         {
             using (JobSearchDBEntities1 db = new JobSearchDBEntities1())
             {
-                return View(db.Jobs.OrderBy(i => i.Date).ToList());
+                return View(db.Jobs.OrderByDescending(i => i.Date).ToList());
             }
 
         }
