@@ -20,6 +20,16 @@ namespace JobSearchWebApp.Controllers
         }
 
 
+        public ActionResult SortDateNewest()
+        {
+            using (JobSearchDBEntities1 db = new JobSearchDBEntities1())
+            {
+                return View(db.Jobs.OrderBy(i => i.Date).ToList());
+            }
+
+        }
+
+
         public ActionResult jobSearch(string jobtitle)
         {
 
