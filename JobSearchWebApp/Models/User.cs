@@ -27,10 +27,13 @@ namespace JobSearchWebApp.Models
 
         [Display(Name = "First Name:")]
         [Required(ErrorMessage = "First Name is required.")]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
         public string FName { get; set; }
+
 
         [Display(Name = "Last Name:")]
         [Required(ErrorMessage = "Last Name is required.")]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
         public string LName { get; set; }
 
         [Display(Name = "Email:")]
@@ -39,16 +42,22 @@ namespace JobSearchWebApp.Models
             ErrorMessage = "Email address is not valid yo")]
         public string Email { get; set; }
 
+
         [Display(Name = "Phone:")]
         [Required(ErrorMessage = "Phone is missing.")]
+        [MaxLength(12)]
+        [MinLength(12)]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Phone number must be numeric and miniumum of 12.")]
         public Nullable<int> Phone { get; set; }
 
         [Display(Name = "Date of birth:")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        [Required(ErrorMessage = "Date of birth is required.")]
         public Nullable<System.DateTime> DOB { get; set; }
 
         [Display(Name = "Gender:")]
         [Required(ErrorMessage = "Gender is required.")]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
         public string Gender { get; set; }
 
         [Display(Name = "Password:")]
