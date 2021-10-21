@@ -41,13 +41,11 @@ namespace JobSearchWebApp.Models
 
         [Display(Name = "Phone")]
         [Required(ErrorMessage = "Phone is missing.")]
-        [MaxLength(12)]
-        [MinLength(12)]
-        [RegularExpression("^[0-9]*$", ErrorMessage = "Phone number must be numeric and miniumum of 12.")]
+        //[RegularExpression("^[0-9]{12,12}*$", ErrorMessage = "Phone number must be numeric and miniumum of 12.")]
         public int Phone { get; set; }
 
-        [Display(Name = "Job Description")]
-        [Required(ErrorMessage = "Job Description is required.")]
+        [Display(Name = "Addess")]
+        [Required(ErrorMessage = "Address is required.")]
         public string Address { get; set; }
 
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]

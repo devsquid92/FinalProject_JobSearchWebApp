@@ -22,17 +22,21 @@ namespace JobSearchWebApp.AutomatedUITests
 
         private static void DelayForDemo()
         {
+
+            // A function that delays a procedure before continuing its next task.
             Thread.Sleep(1000);
         }
 
         public void NavigateToProfile()
         {
+            // A function that will easily navigate to user profile if needed in the procedure.
             _driver.Navigate().GoToUrl("http://localhost:44395/Account/LoggedIn");
         }
 
         [TestMethod]
         public void launchBrowser()
         {
+            // Checking the title of the current page given by the url.
             _driver.Navigate().GoToUrl("http://localhost:44395/");
 
             Assert.AreEqual("Home Page - Job Search Portal", _driver.Title);
@@ -41,6 +45,7 @@ namespace JobSearchWebApp.AutomatedUITests
         [TestMethod]
         public void ShouldUserLogin()
         {
+            // Logging in by entering automated keys provided.
             _driver.Navigate().GoToUrl("http://localhost:44395/Account/Login");
 
             //Enter email
@@ -60,6 +65,7 @@ namespace JobSearchWebApp.AutomatedUITests
         [TestMethod]
         public void ShouldUserFindJobs()
         {
+            // To see if it navigates correctly to ensure connection.
             _driver.Navigate().GoToUrl("http://localhost:44395/Job");
 
         }
@@ -68,6 +74,7 @@ namespace JobSearchWebApp.AutomatedUITests
         [TestMethod]
         public void ShouldUserSearchJob()
         {
+            // Attempts to search using the search function by entering automated keys.
             var searchTitle = "Programmer";
 
             ShouldUserFindJobs();
@@ -86,6 +93,7 @@ namespace JobSearchWebApp.AutomatedUITests
         [TestMethod]
         public void ShouldUserSaveJob()
         {
+            //Testing to see if the searched job can be save after logging in.
             //User logging in
             ShouldUserLogin();
             DelayForDemo();
@@ -107,6 +115,7 @@ namespace JobSearchWebApp.AutomatedUITests
         [TestMethod]
         public void ShouldUserDeleteSavedJob()
         {
+            //Testing the delete function from user profile after logging in.
             ShouldUserLogin();
             _driver.FindElement(By.Name("delete")).Click();
 
@@ -115,21 +124,22 @@ namespace JobSearchWebApp.AutomatedUITests
         [TestMethod]
         public void ShouldUserRegister()
         {
+            //Testing the registration function by providing automated keys.
             _driver.Navigate().GoToUrl("http://localhost:44395/Account/Register");
 
             //Enter first name
             IWebElement fname = _driver.FindElement(By.Name("FName"));
-            fname.SendKeys("Johnby");
+            fname.SendKeys("Tester");
             DelayForDemo();
 
             //Enter last name
             IWebElement lname = _driver.FindElement(By.Name("LName"));
-            lname.SendKeys("Ramurez");
+            lname.SendKeys("Testing");
             DelayForDemo();
 
             //Enter email
             IWebElement email = _driver.FindElement(By.Name("Email"));
-            email.SendKeys("jm.not@it.weltec.ac.nz");
+            email.SendKeys("testing@it.weltec.ac.nz");
             DelayForDemo();
 
             //Enter phone
@@ -165,20 +175,22 @@ namespace JobSearchWebApp.AutomatedUITests
 
         public void selectDate()
         {
+            // a simple function that allows to select date from datepicker feature.
             _driver.FindElement(By.ClassName("ui-state-default")).Click();
         }
 
         [TestMethod]
         public void ShouldUserAddJob()
         {
+            //Testing to see if adding a job will work with provided automated keys.
             _driver.Navigate().GoToUrl("http://localhost:44395/Job/AddJob");
 
             IWebElement title = _driver.FindElement(By.Name("Title"));
-            title.SendKeys("Mic Tester");
+            title.SendKeys("Testing");
             DelayForDemo();
 
             IWebElement comname = _driver.FindElement(By.Name("ComName"));
-            comname.SendKeys("Microphone Testers");
+            comname.SendKeys("MTester");
             DelayForDemo();
 
             IWebElement email = _driver.FindElement(By.Name("Email"));
@@ -190,7 +202,7 @@ namespace JobSearchWebApp.AutomatedUITests
             DelayForDemo();
 
             IWebElement address = _driver.FindElement(By.Name("Address"));
-            address.SendKeys("4333 Wellington Street Petone");
+            address.SendKeys("4333 Tester Street Petone");
             DelayForDemo();
 
             _driver.FindElement(By.Name("Date")).Click();
@@ -198,7 +210,7 @@ namespace JobSearchWebApp.AutomatedUITests
             DelayForDemo();
 
             IWebElement jobdesc = _driver.FindElement(By.Name("JobDesc"));
-            jobdesc.SendKeys("Looking for no one but you");
+            jobdesc.SendKeys("More testing..........");
             DelayForDemo();
 
             _driver.FindElement(By.ClassName("btn-default")).Click();

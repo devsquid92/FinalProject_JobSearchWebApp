@@ -1,0 +1,38 @@
+﻿@model IEnumerable<JobSearchWebApp.Models.SavedJob>
+
+@{
+    ViewBag.Title = "del";
+}
+
+<h2>Saved Job Lists after delete test</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SJobId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobsId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.SJobId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.JobsId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UserId)
+    </td>
+</tr>
+}
+
+</table>

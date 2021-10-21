@@ -45,9 +45,7 @@ namespace JobSearchWebApp.Models
 
         [Display(Name = "Phone:")]
         [Required(ErrorMessage = "Phone is missing.")]
-        [MaxLength(12)]
-        [MinLength(12)]
-        [RegularExpression("^[0-9]*$", ErrorMessage = "Phone number must be numeric and miniumum of 12.")]
+        //[RegularExpression(@"([0-9]+)", ErrorMessage = "Phone number must be numeric and miniumum of 11.")]
         public Nullable<int> Phone { get; set; }
 
         [Display(Name = "Date of birth:")]
@@ -62,12 +60,12 @@ namespace JobSearchWebApp.Models
 
         [Display(Name = "Password:")]
         [Required(ErrorMessage = "Password is required.")]
-        [DataType(DataType.Password)]
+        //[DataType(DataType.Password)]
         public string Password { get; set; }
 
         [Display(Name = "Confirm Password:")]
         [Compare("Password", ErrorMessage = "Please confirm your password.")]
-        [DataType(DataType.Password)]
+        //[DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
