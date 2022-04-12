@@ -10,7 +10,7 @@ Extract the roslyn.rar to folder\
 Inside the folder you must copy the roslyn folder(inside extracted folder)..\
 Go to the code folder and in the JobSearchWebApp folder\
 Enter bin folder and paste the roslyn folder into the bin\
-Execute the file and it should work.\
+Execute the file and it should work.
 
 
 # Database
