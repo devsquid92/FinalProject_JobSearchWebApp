@@ -2,7 +2,7 @@
 Testing & Secure Coding
 
 
-#Run the code through visual studio (Colleagues ran to error after cloning the code to their device)
+# Run the code through visual studio (Colleagues ran to error after cloning the code to their device)
 Execute the code by running it with google chrome\
 You may get an error such as cannot find path: roslyn/csc.exe etc......\
 download Roslyn roslyn.rar\
@@ -13,7 +13,7 @@ Enter bin folder and paste the roslyn folder into the bin\
 Execute the file and it should work.\
 
 
-#Database
+# Database
 Download App_Data.rar and extract the file.\
 Copy the App_Data folder(inside extracted folder).\
 Go to source folder JobSearchWebApp\
