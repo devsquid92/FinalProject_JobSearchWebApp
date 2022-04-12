@@ -1,5 +1,5 @@
-# FinalProject_JobSearchWebApp
-
+# FinalProject_JobSearchWebApp (WelTec)
+Testing & Secure Coding
 
 #Run the code through visual studio\
 #Execute the code by running it with google chrome\
